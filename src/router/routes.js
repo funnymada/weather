@@ -1,11 +1,12 @@
-
+import {loginStore} from "stores/piniaStore";
 const routes = [
+
   {
     path: '/',
     component: () => import('layouts/unLoggedLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
-    ]
+  { path: '', component: () => import('pages/IndexPage.vue') }
+]
   },
 
   // Always leave this as last one,

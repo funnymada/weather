@@ -36,7 +36,7 @@ defineProps({
 
 <template>
       <q-card class="my-card">
-        <q-card-section class="bg-light-blue-5 text-white">
+        <q-card-section class="bg-light-blue-4 text-white">
           <div class="text-h6"> {{city.name}} </div>
           <div class="absolute-bottom text-subtitle2 text-center">
             {{ city.degrees }}°

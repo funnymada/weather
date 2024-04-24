@@ -24,7 +24,7 @@ const hello = () => {
 
 <style scoped>
 .my-card{
-  width: calc(25%);
+  width: 25%;
   margin:3%;
   border-radius: 12px;
   float: left;

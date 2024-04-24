@@ -2,3 +2,13 @@
   width: 800px;
   padding-bottom: 32px;
 }
+
+@media screen and (max-width: 800px) {
+  .cardContainer {
+    display: grid;
+  }
+  .my-card {
+    width: 90%!important;
+    margin: 3%;
+  }
+}

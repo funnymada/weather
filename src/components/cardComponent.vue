@@ -1,13 +1,37 @@
 <script setup>
-import {ref } from 'vue';
+import {ref,onBeforeUpdate} from 'vue';
 
-const hello = () => {
-  console.log('Hello');
+onBeforeUpdate(()=>{
+  console.log("comment beforeUpdate")
+  definePrecipitation(city.precipitation)
+})
+const precipitation = ref('')
+
+const definePrecipitation = (value) => {
+  switch (value){
+    case 0:{
+      precipitation.value = 'fa-solid fa-sun'
+      break
+    }
+    case 1:{
+      precipitation.value = 'fa-solid fa-cloud'
+      break
+    }
+    case 2:{
+      precipitation.value = 'fa-solid fa-cloud-rain'
+      break
+    }
+    case 3:{
+      precipitation.value = 'fa-solid fa-snowflake'
+      break
+    }
+  }
+
 }
-  defineProps({
-    city:{}
-  })
 
+defineProps({
+  city:{}
+})
 </script>
 
 <template>
@@ -20,7 +44,7 @@ const hello = () => {
         </q-card-section>
 
         <q-card-actions vertical align="center">
-          <q-icon> </q-icon> <!-- inserire l'icona dipendentemente da se piove o no-->
+          <q-icon :name="precipitation.value"> </q-icon> <!-- inserire l'icona dipendentemente da se piove o no-->
         </q-card-actions>
       </q-card>
 </template>

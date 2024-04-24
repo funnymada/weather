@@ -12,7 +12,7 @@ const hello = () => {
 
 <template>
       <q-card class="my-card">
-        <q-card-section class="bg-grey-8 text-white">
+        <q-card-section class="bg-light-blue-4 text-white">
           <div class="text-h6"> {{city.name}} </div>
           <div class="absolute-bottom text-subtitle2 text-center">
             {{ city.degrees }}°
@@ -27,9 +27,10 @@ const hello = () => {
 
 <style scoped>
 .my-card{
-  flex-wrap: wrap;
+  background-color: #5fa6aa;
   width: 25%;
   margin:3%;
+  float: left;
   border-radius: 12px;
   height: 22vb;
 }

@@ -16,19 +16,23 @@ const arrayCity = [
     name: 'Cene',
     degrees: 1.4,
     precipitation: 3,
+  },
+  {
+    name: 'Alzano',
+    degrees: 14,
+    precipitation: 3,
   }
 ]
 </script>
 
 <template>
   <div class="q-pa-md cardContainer">
-    <q-list>
-      <q-item v-for="index in arrayCity.length" :key="index">
-        <card-component :city="arrayCity[index-1]"> </card-component>
-      </q-item>
-    </q-list>
+    <template  v-for="index in arrayCity.length" :key="index" >
+      <card-component :city="arrayCity[index-1]"> </card-component>
+    </template>
   </div>
 </template>
 
 <style scoped>
+
 </style>

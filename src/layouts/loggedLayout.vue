@@ -1,41 +1,40 @@
-import { import { UserCircle } from '@heroicons/vue/24/solid';
-} from '@heroicons/vue/24/solid';
 <template>
   <q-layout view="hHh lpR fFf">
-
     <q-header elevated class="bg-primary text-white" height-hint="98">
       <q-toolbar>
         <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          Weather Station
-
+          <div>
+            <q-icon name="fa-solid fa-cloud-bolt" class="logolayout"/>
+            <p class="titlestyle">Weather Station</p>
+          </div>
         </q-toolbar-title>
-        <q-icon >  </q-icon>
+        <div class="spaceforlogin">
+          <q-icon  name="fa-solid fa-circle-user" class="loginlogo"> </q-icon>
+        </div>
       </q-toolbar>
       <q-tabs align="center">
         <q-route-tab to="/page1" label="Page One" />
         <q-route-tab to="/page2" label="Page Two" />
       </q-tabs>
     </q-header>
-
+    <my-footer></my-footer>
     <q-page-container>
       <router-view />
     </q-page-container>
-
-    <q-footer elevated class="bg-grey-8 text-white">
-      <q-toolbar>
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          <div>Title</div>
-        </q-toolbar-title>
-      </q-toolbar>
-    </q-footer>
-
   </q-layout>
 </template>
-<script setup lang="js">
+<script setup>
+import MyFooter from "components/myFooter.vue";
+
 </script>
+<style scoped>
+.loginlogo{
+  font-size: 25px;
+}
+.logolayout{
+  font-size: 40px;
+}
+.titlestyle{
+  font-size: 15px;
+}
+</style>

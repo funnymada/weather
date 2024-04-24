@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import createPersist from 'pinia-persist';
+//import createPersist from 'pinia-persist';
 
 export const loginStore = defineStore('isLogged', {
   state: () => ({
@@ -14,9 +14,9 @@ export const loginStore = defineStore('isLogged', {
     },
   },
 });
-
+/*
 const persist = createPersist('isLogged', {
   filter: ['isLogged'],
 });
 
-persist(loginStore);
+persist(loginStore);*/

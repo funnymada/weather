@@ -5,7 +5,7 @@
       <q-toolbar>
         <q-toolbar-title>
           <div>
-            <q-icon name="fa-solid fa-cloud-bolt" class="logolayout"/>
+            <q-icon name="fa-solid fa-cloud-bolt" class="logolayout"></q-icon>
             <p class="titlestyle">Weather Station</p>
           </div>
         </q-toolbar-title>
@@ -23,6 +23,7 @@
 </template>
 <script setup lang="js">
 import MyFooter from "components/myFooter.vue";
+import loginPopUp from "components/loginPopUp.vue";
 </script>
 <style scoped>
 .loginlogo{

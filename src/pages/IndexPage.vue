@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex flex-center">
     <div>
-      <div id="q-app" style="min-height: 100vh;">
+      <div id="q-app" style="min-height: 50vh;">
         <div class="q-pa-md">
           <div class="q-gutter-md row">
             <q-select

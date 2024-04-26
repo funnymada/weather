@@ -20,7 +20,7 @@ const arrayCity = [
   {
     name: 'Alzano',
     degrees: 14,
-    precipitation: 3,
+    precipitation: 1,
   }
 ]
 </script>

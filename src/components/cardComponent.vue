@@ -44,13 +44,21 @@ const definePrecipitation = (value) => {
         </q-card-section>
 
         <q-card-actions vertical align="center">
-
-          <q-icon :name="precipitation"> </q-icon> <!-- inserire l'icona dipendentemente da se piove o no-->
+          <q-icon :name="precipitation" class="iconCard"> </q-icon> <!-- inserire l'icona dipendentemente da se piove o no-->
         </q-card-actions>
       </q-card>
 </template>
 
 <style scoped>
+.iconCard{
+  margin-top: 3%;
+  font-size: 400%;
+  color: #b88755;
+  transition: transform 0.8s ease-in-out;
+}
+.iconCard:hover {
+  transform: rotate(30deg); /* Apply rotation on hover */
+}
 .my-card{
   background-color: #5fa6aa;
   width: 25%;

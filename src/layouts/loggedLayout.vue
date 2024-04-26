@@ -3,10 +3,10 @@
     <q-header elevated class="bg-primary text-white" height-hint="98">
       <q-toolbar>
         <q-toolbar-title>
-          <div>
-            <q-icon name="fa-solid fa-cloud-bolt" class="logolayout"/>
-            <p class="titlestyle">Weather Station</p>
-          </div>
+          <q-avatar class="titlestyle">
+            <img src="public/icons/favicon-96x96.png">
+          </q-avatar>
+          Weather Station
         </q-toolbar-title>
         <div class="spaceforlogin">
           <q-icon  name="fa-solid fa-circle-user" class="loginlogo"> </q-icon>
@@ -30,9 +30,6 @@ import MyFooter from "components/myFooter.vue";
 <style scoped>
 .loginlogo{
   font-size: 25px;
-}
-.logolayout{
-  font-size: 40px;
 }
 .titlestyle{
   font-size: 15px;

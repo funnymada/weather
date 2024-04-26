@@ -5,9 +5,10 @@
   <q-footer elevated class="bg-grey-8 text-white">
     <q-toolbar>
       <q-toolbar-title>
-        <q-icon name="fa-solid fa-cloud-bolt" class="logolayout"/>
+        <q-avatar>
+          <img src="public/icons/favicon-96x96.png">
+        </q-avatar>
       </q-toolbar-title>
-
 
       <a href="https://github.com/funnymada/weather"  rel="noopener noreferrer">
         link to repo:

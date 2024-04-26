@@ -1,5 +1,9 @@
 <script setup>
 import {ref, onMounted} from 'vue';
+import {useRouter} from "vue-router";
+
+const router = useRouter()
+
 onMounted(()=>{
   definePrecipitation( Prop.city.precipitation)
 })
@@ -32,10 +36,15 @@ const definePrecipitation = (value) => {
     }
   }
 }
+const goToCity = () => {
+  router.push("/")
+}
 </script>
 
 <template>
-      <q-card class="my-card">
+
+  <q-card class="my-card" @click="goToCity">
+
         <q-card-section class="bg-light-blue-4 text-white">
           <div class="text-h6"> {{Prop.city.name}} </div>
           <div class="absolute-bottom text-subtitle2 text-center">
@@ -51,8 +60,9 @@ const definePrecipitation = (value) => {
 
 <style scoped>
 .iconCard{
+  color: #cc7c5f;
+  margin-top:2vb;
   font-size: 400%;
-  color: #b88755;
   transition: transform 0.8s ease-in-out;
 }
 .iconCard:hover {

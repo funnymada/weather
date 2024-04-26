@@ -1,10 +1,15 @@
 <script setup>
-import {ref,onBeforeUpdate} from 'vue';
-
-onBeforeUpdate(()=>{
-  console.log("comment beforeUpdate")
-  definePrecipitation(city.precipitation)
+import {ref, onMounted} from 'vue';
+onMounted(()=>{
+  definePrecipitation( Prop.city.precipitation)
 })
+
+  const Prop = defineProps({
+    city: {
+      type: Object
+    }
+  })
+
 const precipitation = ref('')
 
 const definePrecipitation = (value) => {
@@ -26,25 +31,21 @@ const definePrecipitation = (value) => {
       break
     }
   }
-
 }
-
-defineProps({
-  city:{}
-})
 </script>
 
 <template>
       <q-card class="my-card">
         <q-card-section class="bg-light-blue-4 text-white">
-          <div class="text-h6"> {{city.name}} </div>
+          <div class="text-h6"> {{Prop.city.name}} </div>
           <div class="absolute-bottom text-subtitle2 text-center">
             {{ city.degrees }}°
           </div>
         </q-card-section>
 
         <q-card-actions vertical align="center">
-          <q-icon :name="precipitation.value"> </q-icon> <!-- inserire l'icona dipendentemente da se piove o no-->
+
+          <q-icon :name="precipitation"> </q-icon> <!-- inserire l'icona dipendentemente da se piove o no-->
         </q-card-actions>
       </q-card>
 </template>

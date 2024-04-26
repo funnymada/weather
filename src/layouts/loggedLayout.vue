@@ -3,7 +3,7 @@
     <q-header elevated class="bg-primary text-white" height-hint="98">
       <q-toolbar>
         <q-toolbar-title>
-          <q-avatar class="titlestyle">
+          <q-avatar>
             <img src="public/icons/favicon-96x96.png">
           </q-avatar>
           Weather Station
@@ -30,8 +30,5 @@ import MyFooter from "components/myFooter.vue";
 <style scoped>
 .loginlogo{
   font-size: 25px;
-}
-.titlestyle{
-  font-size: 15px;
 }
 </style>

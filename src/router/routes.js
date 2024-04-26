@@ -16,10 +16,10 @@ const routes = [
     ]
   },
   {
-    path: '/Favourite',
+    path: '/city',
     component: () => import('layouts/LoggedLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/favouritePage.vue') }
+      { path: '', component: () => import('pages/cityPage.vue') }
     ]
   },
   // Always leave this as last one,

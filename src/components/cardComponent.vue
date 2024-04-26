@@ -37,7 +37,7 @@ const definePrecipitation = (value) => {
   }
 }
 const goToCity = () => {
-  router.push("/")
+  router.push("/city")
 }
 </script>
 
@@ -48,7 +48,7 @@ const goToCity = () => {
         <q-card-section class="bg-light-blue-4 text-white">
           <div class="text-h6"> {{Prop.city.name}} </div>
           <div class="absolute-bottom text-subtitle2 text-center">
-            {{ city.degrees }}°
+            {{ Prop.city.degrees }}°
           </div>
         </q-card-section>
 
@@ -60,7 +60,6 @@ const goToCity = () => {
 
 <style scoped>
 .iconCard{
-  color: #cc7c5f;
   margin-top:2vb;
   font-size: 400%;
   transition: transform 0.8s ease-in-out;

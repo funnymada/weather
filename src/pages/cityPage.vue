@@ -1,18 +1,16 @@
 <script setup>
+import {watch} from "vue";
+import { useRoute } from 'vue-router'
+const route = useRoute()
 
-import {onBeforeMount} from "vue";
-
-
-
-onBeforeMount(() => {
-  this.$q.page.setTitle("title");
+watch(() => route.query.val, (newValue, oldValue) => {
+  console.log("newValue"+newValue)
+  console.log("oldValue"+oldValue)
 })
 </script>
 
 <template>
-<q-page>
-
-</q-page>
+ <div>dsdsgsdfgsdfsdf</div>
 </template>
 
 <style scoped>

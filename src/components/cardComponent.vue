@@ -1,20 +1,38 @@
 <script setup>
 import {ref, onMounted} from 'vue';
-import {useRouter} from "vue-router";
+import {useRouter, createRouter, createWebHistory} from "vue-router";
 
-const router = useRouter()
+const router = useRouter();
+
+const precipitation = ref('')
 
 onMounted(()=>{
   definePrecipitation( Prop.city.precipitation)
+
+  const mainRouter = createRouter({
+    history: createWebHistory(),
+    routes: [
+      router.addRoute({
+      path: `/${Prop.city.name}`,
+    component: () => import('src/layouts/loggedLayout.vue'),
+    children: [
+    { path: '', component: () => import('pages/cityPage.vue') }
+  ]
+})
+    ]
+  });
+
 })
 
-  const Prop = defineProps({
-    city: {
-      type: Object
-    }
-  })
+const Prop = defineProps({
+  city: {
+    type: Object
+  }
+})
 
-const precipitation = ref('')
+const goToCity = () =>{
+  router.push({ path: `/${Prop.city.name}` , query:{val: Prop.city}})
+}
 
 const definePrecipitation = (value) => {
   switch (value){
@@ -35,9 +53,6 @@ const definePrecipitation = (value) => {
       break
     }
   }
-}
-const goToCity = () => {
-  router.push("/city")
 }
 </script>
 

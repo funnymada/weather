@@ -31,7 +31,7 @@ const Prop = defineProps({
 })
 
 const goToCity = () =>{
-  router.push({ path: `/${Prop.city.name}` , query:{val: Prop.city}})
+  router.push({ path: `/${Prop.city.name}` , query: {city: Prop.city}})
 }
 
 const definePrecipitation = (value) => {

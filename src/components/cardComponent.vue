@@ -1,9 +1,10 @@
 <script setup>
+import {cityStore} from "stores/cityStore";
 import {ref, onMounted} from 'vue';
 import {useRouter, createRouter, createWebHistory} from "vue-router";
 
 const router = useRouter();
-
+const randomCity = cityStore.state;
 const precipitation = ref('')
 
 onMounted(()=>{
@@ -31,7 +32,9 @@ const Prop = defineProps({
 })
 
 const goToCity = () =>{
-  router.push({ path: `/${Prop.city.name}` , query: {city: Prop.city}})
+  randomCity.refresh(Prop.city)
+  console.log(cityStore)
+  router.push({ path: `/${Prop.city.name}`})
 }
 
 const definePrecipitation = (value) => {

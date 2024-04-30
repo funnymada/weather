@@ -1,6 +1,6 @@
 import { store } from 'quasar/wrappers'
 import { createPinia } from 'pinia'
-
+import {cityStore} from "stores/cityStore";
 /*
  * If not building with SSR mode, you can
  * directly export the Store instantiation;
@@ -12,9 +12,15 @@ import { createPinia } from 'pinia'
 
 export default store((/* { ssrContext } */) => {
   const pinia = createPinia()
+  const mycityStore = cityStore()
 
-  // You can add Pinia plugins here
-  // pinia.use(SomePiniaPlugin)
+  pinia.use(({ store }) => {
+    store.$onAction((action) => {
+      if (action.type === 'refresh') {
+        store.mycityStore.saveToLocalStorage();
+      }
+    });
+  });
 
   return pinia
 })

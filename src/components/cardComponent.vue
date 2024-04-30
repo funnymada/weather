@@ -1,13 +1,7 @@
 <script setup>
 import {cityStore} from "stores/cityStore";
-import {ref, onMounted, createApp} from 'vue';
+import {ref, onMounted} from 'vue';
 import {useRouter, createRouter, createWebHistory} from "vue-router";
-import {createPinia} from "pinia";
-import App from "../App.vue";
-
-const pinia = createPinia()
-const app = createApp(App)
-app.use(pinia)
 
 const myCityStore = cityStore();
 
@@ -19,14 +13,15 @@ onMounted(()=>{
 
   const mainRouter = createRouter({
     history: createWebHistory(),
+
     routes: [
       router.addRoute({
-      path: `/${Prop.city.name}`,
-    component: () => import('src/layouts/loggedLayout.vue'),
-    children: [
-    { path: '', component: () => import('pages/cityPage.vue') }
-  ]
-})
+        path: `/${Prop.city.name}`,
+        component: () => import('src/layouts/loggedLayout.vue'),
+        children: [
+          { path: '', component: () => import('pages/cityPage.vue') }
+        ]
+      })
     ]
   });
 

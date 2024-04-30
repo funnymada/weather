@@ -1,25 +1,19 @@
 <script setup>
 import {cityStore} from "stores/cityStore";
-import {ref, onMounted, createApp} from 'vue';
-import {createPinia} from "pinia";
-import App from "../App.vue";
-
-const pinia = createPinia()
-const app = createApp(App)
-app.use(pinia)
+import {ref    } from 'vue';
 
 const myCityStore = cityStore();
-
-onMounted(()=>{
-  console.log(myCityStore.name + " degrees:" + myCityStore.degrees + " precipitation:" + myCityStore.precipitation);
-})
 
 </script>
 
 <template>
-  <div></div>
+   <div class="example">{{myCityStore.name}}</div>
 </template>
 
 <style scoped>
-
+    .example{
+      width: 100%;
+      height: 30vh;
+      background-color: #980c0c;
+    }
 </style>

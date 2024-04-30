@@ -1,26 +1,17 @@
 <script setup>
-import {ref, onMounted} from 'vue';
-import {useRouter, createRouter, createWebHistory} from "vue-router";
+import {cityStore} from "stores/cityStore";
+import {ref, onMounted, createApp} from 'vue';
+import {createPinia} from "pinia";
+import App from "../App.vue";
 
-const myCity = ref({})
-const router = useRouter()
+const pinia = createPinia()
+const app = createApp(App)
+app.use(pinia)
+
+const myCityStore = cityStore();
 
 onMounted(()=>{
-  myCity.value = this.router.query.city
-  console.log("rotta si sta aggiungendo")
-  const mainRouter = createRouter({
-    history: createWebHistory(),
-    routes: [
-      router.addRoute({
-        path: `/${myCity.value.name}`,
-        component: () => import('src/layouts/loggedLayout.vue'),
-        children: [
-          { path: '', component: () => import('pages/cityPage.vue') }
-        ]
-      })
-    ]
-  });
-  console.log("rotta si è aggiunta")
+  console.log(myCityStore.name + " degrees:" + myCityStore.degrees + " precipitation:" + myCityStore.precipitation);
 })
 
 </script>

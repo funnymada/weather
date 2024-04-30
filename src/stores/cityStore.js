@@ -1,6 +1,8 @@
-import { defineStore } from 'pinia';
-import { persist } from 'pinia-plugin-persist';
+import {createPinia, defineStore} from 'pinia';
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
+
+const pinia = createPinia()
 export const cityStore = defineStore('weather', {
   state: () => ({
     name: '',
@@ -8,11 +10,14 @@ export const cityStore = defineStore('weather', {
     precipitation: null,
   }),
   actions: {
-    refresh({newCity}) {
-      this.name = newCity.newName;
-      this.degrees = newCity.newDegrees;
-      this.precipitation = newCity.newPrecipitation;
+    changeName (name) {
+      cityStore.name=name
+    },
+    refresh(newCity) {
+      this.name = newCity.name;
+      this.degrees = newCity.degrees;
+      this.precipitation = newCity.precipitation;
     },
   },
-  plugins: [persist()],
+  plugins: pinia.use(piniaPluginPersistedstate),
 });

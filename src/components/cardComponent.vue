@@ -1,10 +1,17 @@
 <script setup>
 import {cityStore} from "stores/cityStore";
-import {ref, onMounted} from 'vue';
+import {ref, onMounted, createApp} from 'vue';
 import {useRouter, createRouter, createWebHistory} from "vue-router";
+import {createPinia} from "pinia";
+import App from "../App.vue";
+
+const pinia = createPinia()
+const app = createApp(App)
+app.use(pinia)
+
+const myCityStore = cityStore();
 
 const router = useRouter();
-const randomCity = cityStore.state;
 const precipitation = ref('')
 
 onMounted(()=>{
@@ -32,8 +39,8 @@ const Prop = defineProps({
 })
 
 const goToCity = () =>{
-  randomCity.refresh(Prop.city)
-  console.log(cityStore)
+
+  myCityStore.refresh(Prop.city);
   router.push({ path: `/${Prop.city.name}`})
 }
 

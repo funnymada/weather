@@ -2,13 +2,14 @@
 import {cityStore} from "stores/cityStore";
 import {ref, onMounted} from 'vue';
 import {useRouter, createRouter, createWebHistory} from "vue-router";
-
+import {useQuasar} from 'quasar'
 const myCityStore = cityStore();
 
 const router = useRouter();
 const precipitation = ref('')
 
 onMounted(()=>{
+  myCityStore.loadFromLocalStorage();
   definePrecipitation( Prop.city.precipitation)
 
   const mainRouter = createRouter({

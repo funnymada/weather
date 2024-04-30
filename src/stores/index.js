@@ -12,15 +12,6 @@ import {cityStore} from "stores/cityStore";
 
 export default store((/* { ssrContext } */) => {
   const pinia = createPinia()
-  const mycityStore = cityStore()
-
-  pinia.use(({ store }) => {
-    store.$onAction((action) => {
-      if (action.type === 'refresh') {
-        store.mycityStore.saveToLocalStorage();
-      }
-    });
-  });
 
   return pinia
 })

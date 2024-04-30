@@ -1,7 +1,4 @@
 import {loginStore} from "stores/piniaStore";
-import {cityStore} from "stores/cityStore";
-
-const myCityStore = cityStore();
 
 const routes = [
 
@@ -20,14 +17,14 @@ const routes = [
     ]
   },
   {
-    path: `/${myCityStore.name}`,
+    path: `/${Store.name}`,
     component: () => import('layouts/LoggedLayout.vue'),
     children: [
       { path: '', component: () => import('pages/cityPage.vue') }
     ]
   },
   {
-    path: `/${myCityStore.test}`,
+    path: `/example`,
     component: () => import('layouts/LoggedLayout.vue'),
     children: [
       { path: '', component: () => import('pages/cityPage.vue') }

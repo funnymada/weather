@@ -1,9 +1,8 @@
-import { useQuasar } from 'quasar/vue';
 import { createPinia, defineStore } from 'pinia';
+import {useQuasar} from "quasar";
 
 const pinia = createPinia();
 const localStorageKey = 'cityStore';
-
 export const cityStore = defineStore('weather', {
   state: () => ({
     name: '',
@@ -12,10 +11,10 @@ export const cityStore = defineStore('weather', {
     test: "example"
   }),
   actions: {
-    // Metodo per caricare lo stato dal Local Storage
+
     loadFromLocalStorage() {
-      const { $q } = useQuasar();
-      const data = $q.localStorage.getItem(localStorageKey);
+      const $q = useQuasar()
+      const data =  $q.localStorage.getItem(localStorageKey);
       if (data) {
         const parsedData = JSON.parse(data);
         this.name = parsedData.name;
@@ -25,15 +24,16 @@ export const cityStore = defineStore('weather', {
     },
     // Metodo per salvare lo stato nel Local Storage
     saveToLocalStorage() {
-      const { $q } = useQuasar();
+      const $q = useQuasar()
       const data = JSON.stringify({
         name: this.name,
         degrees: this.degrees,
         precipitation: this.precipitation,
       });
-      $q.localStorage.set(localStorageKey, data);
+
+      localStorage.setItem(localStorageKey, data);
     },
-    // Metodo per aggiornare lo stato e salvarlo nel Local Storage
+
     refresh(newCity) {
       this.name = newCity.name;
       this.degrees = newCity.degrees;
@@ -41,7 +41,7 @@ export const cityStore = defineStore('weather', {
       this.saveToLocalStorage();
     },
   },
-  // Carica lo stato dal Local Storage quando il componente viene montato
+
   mounted() {
     this.loadFromLocalStorage();
   },

@@ -1,8 +1,12 @@
 <script setup>
 import {cityStore} from "stores/cityStore";
-import {ref    } from 'vue';
+import {onMounted, ref} from 'vue';
 
 const myCityStore = cityStore();
+
+onMounted(() => {
+  myCityStore.loadFromLocalStorage();
+});
 
 </script>
 

@@ -8,7 +8,48 @@ export const cityStore = defineStore('weather', {
     name: '',
     degrees: null,
     precipitation: null,
-    test: "example"
+    data: [{
+      name: 'Bergamo',
+      degrees: 19,
+      precipitation: 2,
+    },
+      {
+        name: 'Brescia',
+        degrees: 5,
+        precipitation: 0,
+      },
+      {
+        name: 'Cene',
+        degrees: 1.4,
+        precipitation: 3,
+      },
+      {
+        name: 'Alzano',
+        degrees: 14,
+        precipitation: 1,
+      },
+      {
+        name: 'Nembro',
+        degrees: 19,
+        precipitation: 2,
+      },
+      {
+        name: 'arcobaleno',
+        degrees: 5,
+        precipitation: 0,
+      },
+      {
+        name: 'gffgfg',
+        degrees: 1.4,
+        precipitation: 3,
+      },
+      {
+        name: 'Montichiari',
+        degrees: 14,
+        precipitation: 1,
+      }
+
+      ]
   }),
   actions: {
 

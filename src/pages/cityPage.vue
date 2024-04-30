@@ -1,12 +1,9 @@
 <script setup>
 import {cityStore} from "stores/cityStore";
-import {onMounted, ref} from 'vue';
+import {useRoute} from "vue-router";
 
 const myCityStore = cityStore();
-
-onMounted(() => {
-  myCityStore.loadFromLocalStorage();
-});
+const route = useRoute();
 
 </script>
 

@@ -12,19 +12,20 @@ onMounted(()=>{
   myCityStore.loadFromLocalStorage();
   definePrecipitation( Prop.city.precipitation)
 
-  const mainRouter = createRouter({
-    history: createWebHistory(),
 
-    routes: [
-      router.addRoute({
-        path: `/${Prop.city.name}`,
-        component: () => import('src/layouts/loggedLayout.vue'),
-        children: [
-          { path: '', component: () => import('pages/cityPage.vue') }
-        ]
-      })
-    ]
-  });
+  // const mainRouter = createRouter({
+  //   history: createWebHistory(),
+  //
+  //   routes: [
+  //     router.addRoute({
+  //       path: `/${Prop.city.name}`,
+  //       component: () => import('src/layouts/loggedLayout.vue'),
+  //       children: [
+  //         { path: '', component: () => import('pages/cityPage.vue') }
+  //       ]
+  //     })
+  //   ]
+  // });
 
 })
 
@@ -35,9 +36,8 @@ const Prop = defineProps({
 })
 
 const goToCity = () =>{
-
   myCityStore.refresh(Prop.city);
-  router.push({ path: `/${Prop.city.name}`})
+  router.push({ path: `/city/${Prop.city.name}`})
 }
 
 const definePrecipitation = (value) => {

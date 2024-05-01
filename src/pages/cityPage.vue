@@ -1,5 +1,6 @@
 <script setup>
 import {cityStore} from "stores/cityStore";
+import WeeklyBar from "components/WeeklyBar.vue";
 
 const myCityStore = cityStore();
 myCityStore.hydrateFromSessionStorage();
@@ -8,7 +9,7 @@ console.log(myCityStore.name);
 </script>
 
 <template>
-   <div class="example">{{myCityStore.name}}</div>
+   <weekly-bar></weekly-bar>
 </template>
 
 <style scoped>

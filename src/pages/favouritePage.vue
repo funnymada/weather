@@ -28,7 +28,7 @@ const arrayCity = [
     precipitation: 1,
   },
   {
-    name: 'Gavarno Vescovado',
+    name: 'Gavarno ',
     degrees: -1,
     precipitation: 3,
   }

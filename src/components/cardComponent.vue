@@ -8,7 +8,6 @@ const router = useRouter();
 const precipitation = ref('')
 
 onMounted(()=>{
-  myCityStore.loadFromLocalStorage();
   definePrecipitation( Prop.city.precipitation)
 })
 

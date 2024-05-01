@@ -21,6 +21,16 @@ const arrayCity = [
     name: 'Alzano',
     degrees: 14,
     precipitation: 1,
+  },
+  {
+    name: 'Gazzaniga',
+    degrees: 15,
+    precipitation: 1,
+  },
+  {
+    name: 'Gavarno Vescovado',
+    degrees: -1,
+    precipitation: 3,
   }
 ]
 </script>

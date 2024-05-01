@@ -1,8 +1,7 @@
 <script setup>
 import {cityStore} from "stores/cityStore";
 import {ref, onMounted} from 'vue';
-import {useRouter, createRouter, createWebHistory} from "vue-router";
-import {useQuasar} from 'quasar'
+import {useRouter} from "vue-router";
 const myCityStore = cityStore();
 
 const router = useRouter();

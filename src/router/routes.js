@@ -1,4 +1,4 @@
-import {loginStore} from "stores/piniaStore";
+import {loginStore} from "stores/loginStore";
 
 const routes = [
 
@@ -18,7 +18,7 @@ const routes = [
   },
   {
     path: `/city/:name`,
-    component: () => import('layouts/LoggedLayout.vue'),
+    component: () => import('layouts/cityLayout.vue'),
     children: [
       { path: '', component: () => import('pages/cityPage.vue') }
     ]

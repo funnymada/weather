@@ -1,9 +1,9 @@
 <script setup>
 import {cityStore} from "stores/cityStore";
-import {useRoute} from "vue-router";
 
 const myCityStore = cityStore();
-const route = useRoute();
+myCityStore.hydrateFromSessionStorage();
+console.log(myCityStore.name);
 
 </script>
 

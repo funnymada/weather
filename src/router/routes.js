@@ -23,14 +23,6 @@ const routes = [
       { path: '', component: () => import('pages/cityPage.vue') }
     ]
   },
-  {
-    path: `/example`,
-    component: () => import('layouts/LoggedLayout.vue'),
-    children: [
-      { path: '', component: () => import('pages/cityPage.vue') }
-    ]
-  },
-
   // Always leave this as last one,
   // but you can also remove it
   {

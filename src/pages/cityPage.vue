@@ -15,6 +15,5 @@ const route = useRoute();
     .example{
       width: 100%;
       height: 30vh;
-      background-color: #980c0c;
     }
 </style>

@@ -11,22 +11,6 @@ const precipitation = ref('')
 onMounted(()=>{
   myCityStore.loadFromLocalStorage();
   definePrecipitation( Prop.city.precipitation)
-
-
-  // const mainRouter = createRouter({
-  //   history: createWebHistory(),
-  //
-  //   routes: [
-  //     router.addRoute({
-  //       path: `/${Prop.city.name}`,
-  //       component: () => import('src/layouts/loggedLayout.vue'),
-  //       children: [
-  //         { path: '', component: () => import('pages/cityPage.vue') }
-  //       ]
-  //     })
-  //   ]
-  // });
-
 })
 
 const Prop = defineProps({

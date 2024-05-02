@@ -124,7 +124,11 @@
   color: #fff;
 }
 
+
+
 .hourly-container{
+  font-family: monospace;
+  color: white;
   background-color: #373636;
   width: 35%;
   height: 60vh;

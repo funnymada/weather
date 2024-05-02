@@ -25,50 +25,15 @@
     </div>
 
       <div class="weekly-container">
-        <div class="daily-container">
-          <q-icon name="fa-solid fa-sun" class="daily-icon"></q-icon>
-          <div class="daily-title">
-            LUN
+        <template v-for="(day, index) in arrowDays" :key="index">
+          <div class="daily-container">
+            <q-icon name="fa-solid fa-sun" class="daily-icon"></q-icon>
+            <div class="daily-title">
+              {{day}}
+            </div>
           </div>
-        </div>
-        <div class="daily-container">
-          <q-icon name="fa-solid fa-sun" class="daily-icon"></q-icon>
-          <div class="daily-title">
-            MAR
-          </div>
-        </div>
-        <div class="daily-container">
-          <q-icon name="fa-solid fa-sun" class="daily-icon"></q-icon>
-          <div class="daily-title">
-            MER
-          </div>
-        </div>
-        <div class="daily-container">
-          <q-icon name="fa-solid fa-sun" class="daily-icon"></q-icon>
-          <div class="daily-title">
-            GIO
-          </div>
-        </div>
-        <div class="daily-container">
-          <q-icon name="fa-solid fa-sun" class="daily-icon"></q-icon>
-          <div class="daily-title">
-            VEN
-          </div>
-        </div>
-        <div class="daily-container">
-          <q-icon name="fa-solid fa-sun" class="daily-icon"></q-icon>
-          <div class="daily-title">
-            SAB
-          </div>
-        </div>
-        <div class="daily-container">
-          <q-icon name="fa-solid fa-sun" class="daily-icon"></q-icon>
-          <div class="daily-title">
-            DOM
-          </div>
-        </div>
+        </template>
       </div>
-
   </div>
 </template>
 
@@ -81,9 +46,11 @@ const arrowDays = ref([])
 for(var i=0;i<7;i++){
   const date = new Date()
   date.setDate(date.getDate() + i);
-  const nomeGiornoDomani = date.toLocaleString('it-IT', { weekday: 'long' });
+  const dayname = date.toLocaleString('it-IT', { weekday: 'long' });
+  const shortDayname = dayname.slice(0, 3);
+  arrowDays.value.push(shortDayname);
 }
-
+console.log(arrowDays.value)
 </script>
 
 <style scoped>

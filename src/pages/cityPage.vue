@@ -4,7 +4,6 @@ import WeeklyBar from "components/WeeklyBar.vue";
 
 const myCityStore = cityStore();
 myCityStore.hydrateFromSessionStorage();
-console.log(myCityStore.name);
 
 </script>
 

@@ -19,7 +19,6 @@ const Prop = defineProps({
 
 const goToCity = () =>{
   myCityStore.refresh(Prop.city);
-  console.log(myCityStore.name)
   router.push({ path: `/city/${Prop.city.name}`})
 }
 

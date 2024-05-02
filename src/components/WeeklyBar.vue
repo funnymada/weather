@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
   <div class="page-container">
     <div class="page-upper-container">
@@ -76,6 +72,20 @@
   </div>
 </template>
 
+<script setup>
+import {ref} from 'vue'
+
+const arrowDays = ref([])
+
+
+for(var i=0;i<7;i++){
+  const date = new Date()
+  date.setDate(date.getDate() + i);
+  const nomeGiornoDomani = date.toLocaleString('it-IT', { weekday: 'long' });
+}
+
+</script>
+
 <style scoped>
 .page-upper-container{
   display:flex;
@@ -118,7 +128,7 @@
 }
 .daily-title{
   font-family: monospace;
-
+  font-weight: lighter;
   text-align: center;
   font-size: 20px;
   color: #fff;
@@ -127,11 +137,13 @@
 
 
 .hourly-container{
-  font-family: monospace;
   color: white;
   background-color: #373636;
   width: 35%;
   height: 60vh;
+  margin-top: 1%;
+  border-radius: 20px;
   overflow-y: auto!important;
+  scrollbar-width: none;
 }
 </style>

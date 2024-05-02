@@ -3,9 +3,9 @@
     <q-header elevated class="bg-primary text-white" height-hint="98">
       <q-toolbar>
         <q-toolbar-title>
-<!--          <q-avatar>-->
-<!--            <img src="public/icons/favicon-96x96.png">-->
-<!--          </q-avatar>-->
+          <q-avatar>
+            <img src="public/icons/favicon-96x96.png">
+          </q-avatar>
           Weather Station
         </q-toolbar-title>
         <div class="spaceforlogin">

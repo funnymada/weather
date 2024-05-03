@@ -105,9 +105,8 @@ console.log(arrowDays.value)
   color: #fff;
 }
 
-
-
 .hourly-container{
+  text-align: center;
   color: white;
   background-color: #373636;
   width: 35%;
